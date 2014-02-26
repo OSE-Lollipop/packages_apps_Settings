@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.preference.PreferenceCategory;
@@ -30,8 +31,14 @@ import android.preference.SwitchPreference;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+import android.widget.Toast;
+
 public class AnimationsSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
+
+    private static final String KEY_TOAST_ANIMATION = "toast_animation";
+
+    private ListPreference mToastAnimation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,6 +46,12 @@ public class AnimationsSettings extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.ose_animations_settings);
 
+        mToastAnimation = (ListPreference) prefSet.findPreference(KEY_TOAST_ANIMATION);
+        mToastAnimation.setSummary(mToastAnimation.getEntry());
+        int CurrentToastAnimation = Settings.System.getInt(
+                getContentResolver(),Settings.System.TOAST_ANIMATION, 1);
+        mToastAnimation.setValueIndex(CurrentToastAnimation);
+        mToastAnimation.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -47,6 +60,15 @@ public class AnimationsSettings extends SettingsPreferenceFragment implements
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        return false;
+        final String key = preference.getKey();
+        if (KEY_TOAST_ANIMATION.equals(key)) {
+            int index = mToastAnimation.findIndexOfValue((String) objValue);
+            Settings.System.putString(getContentResolver(),
+                    Settings.System.TOAST_ANIMATION, (String) objValue);
+            mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
+            Toast.makeText(getActivity(), "Toast animation test!!!",
+                    Toast.LENGTH_SHORT).show();
+        }
+        return true;
     }
 }
