@@ -667,4 +667,8 @@
     <string name="battery_saver_title">Warning color</string>
     <string name="battery_saver_style_reset_message">Reset battery saver warning color?</string>
 
+    <!-- OSE Extra Info -->
+    <string name="lsextrainfo">Extra information</string>
+    <string name="lsextrainfo_summary">Display extra info for cpu, display, etc</string>
+
 </resources>
