@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.preference.PreferenceCategory;
@@ -33,17 +34,36 @@ import com.android.settings.SettingsPreferenceFragment;
 public class GeneralSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String DISABLE_IMMERSIVE_MESSAGE = "disable_immersive_message";
+
+    private CheckBoxPreference mDisableIM;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         addPreferencesFromResource(R.xml.ose_general_settings);
 
+         mDisableIM = (CheckBoxPreference) findPreference(DISABLE_IMMERSIVE_MESSAGE);
+         mDisableIM.setChecked((Settings.System.getInt(resolver,
+                 Settings.System.DISABLE_IMMERSIVE_MESSAGE, 0) == 1));
     }
 
     @Override
     public void onResume() {
         super.onResume();
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+       if  (preference == mDisableIM) {
+           boolean checked = ((CheckBoxPreference)preference).isChecked();
+           Settings.System.putInt(getActivity().getContentResolver(),
+                   Settings.System.DISABLE_IMMERSIVE_MESSAGE, checked ? 1:0);
+           return true;
+       }
+       return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
