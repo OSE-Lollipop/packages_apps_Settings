@@ -27,6 +27,10 @@
             android:summary="@string/privacy_guard_manager_summary"
             android:title="@string/privacy_guard_manager_title" />
 
+        <PreferenceScreen
+            android:title="@string/block_notifications_title"
+            android:fragment="com.android.settings.ose.SpamList" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

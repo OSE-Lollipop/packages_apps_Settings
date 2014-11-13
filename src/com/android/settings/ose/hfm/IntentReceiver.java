@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.liquid.hfm;
+package com.android.settings.ose.hfm;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
