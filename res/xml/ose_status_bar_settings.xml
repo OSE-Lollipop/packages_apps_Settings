@@ -23,23 +23,30 @@
     <PreferenceCategory
             android:title="@string/status_bar_style_title">
 
-        <PreferenceScreen
-                android:fragment="com.android.settings.ose.StatusBarClockStyle"
-                android:key="clock_style_pref"
-                android:title="@string/status_bar_clock" />
+    <PreferenceScreen
+            android:fragment="com.android.settings.ose.StatusBarClockStyle"
+            android:key="clock_style_pref"
+            android:title="@string/status_bar_clock" />
 
-        <com.android.settings.ose.SystemSettingSwitchPreference
-                android:key="status_bar_show_weather"
-                android:title="@string/status_bar_show_weather_title"
-                android:summary="@string/status_bar_show_weather_summary"
-                android:defaultValue="true" />
+    <com.android.settings.ose.SystemSettingSwitchPreference
+            android:key="status_bar_show_weather"
+            android:title="@string/status_bar_show_weather_title"
+            android:summary="@string/status_bar_show_weather_summary"
+            android:defaultValue="true" />
 
-        <ListPreference
-                android:key="status_bar_show_battery_percent"
-                android:title="@string/status_bar_battery_percentage_title"
-                android:dialogTitle="@string/status_bar_battery_percentage_dialog_title"
-                android:entries="@array/status_bar_battery_percentage_entries"
-                android:entryValues="@array/status_bar_battery_percentage_values" />
+    <ListPreference
+            android:key="status_bar_battery_style"
+            android:title="@string/status_bar_battery_style_title"
+            android:dialogTitle="@string/status_bar_battery_style_title"
+            android:entries="@array/status_bar_battery_style_entries"
+            android:entryValues="@array/status_bar_battery_style_values" />
+
+    <ListPreference
+            android:key="status_bar_show_battery_percent"
+            android:title="@string/status_bar_battery_percentage_title"
+            android:dialogTitle="@string/status_bar_battery_percentage_dialog_title"
+            android:entries="@array/status_bar_battery_percentage_entries"
+            android:entryValues="@array/status_bar_battery_percentage_values" />
 
     </PreferenceCategory>
 
