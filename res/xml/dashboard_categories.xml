@@ -79,7 +79,7 @@
         <dashboard-tile
                 android:id="@+id/interface_settings"
                 android:icon="@drawable/ic_settings_interface"
-                android:fragment="com.android.settings.slim.InterfaceSettings"
+                android:fragment="com.android.settings.ose.InterfaceSettings"
                 android:title="@string/interface_settings_title"
                 />
 

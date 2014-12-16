@@ -209,7 +209,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
         mIsPrimary = UserHandle.myUserId() == UserHandle.USER_OWNER;
 
         // App security settings
-        addPreferencesFromResource(R.xml.security_settings_app_slim);
+        addPreferencesFromResource(R.xml.security_settings_app_ose);
 
         // Add options for lock/unlock screen
         final int resid = getResIdForLockUnlockScreen(getActivity(), mLockPatternUtils);

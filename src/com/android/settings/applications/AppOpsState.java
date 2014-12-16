@@ -56,8 +56,8 @@ public class AppOpsState {
         mContext = context;
         mAppOps = (AppOpsManager)context.getSystemService(Context.APP_OPS_SERVICE);
         mPm = context.getPackageManager();
-        mOpSummaries = context.getResources().getTextArray(R.array.app_ops_summaries_slim);
-        mOpLabels = context.getResources().getTextArray(R.array.app_ops_labels_slim);
+        mOpSummaries = context.getResources().getTextArray(R.array.app_ops_summaries_ose);
+        mOpLabels = context.getResources().getTextArray(R.array.app_ops_labels_ose);
     }
 
     public static class OpsTemplate implements Parcelable {

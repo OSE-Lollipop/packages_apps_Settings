@@ -72,7 +72,7 @@
 
         <PreferenceScreen
                 android:key="display_rotation"
-                android:fragment="com.android.settings.slim.DisplayRotation"
+                android:fragment="com.android.settings.ose.DisplayRotation"
                 android:title="@string/display_rotation_title" />
 
         <PreferenceScreen
@@ -86,9 +86,9 @@
                 android:key="screen_off_gesture_settings"
                 android:title="@string/screen_off_gesture_settings_title">
                 <intent
-                    android:action="com.slim.action.LAUNCH_SCREEN_OFF_GESTURE_SETTINGS"
-                    android:targetPackage="com.slim.device"
-                    android:targetClass="com.slim.device.settings.ScreenOffGestureSettings" />
+                    android:action="com.ose.action.LAUNCH_SCREEN_OFF_GESTURE_SETTINGS"
+                    android:targetPackage="com.ose.device"
+                    android:targetClass="com.ose.device.settings.ScreenOffGestureSettings" />
         </Preference>
 
          <PreferenceCategory
@@ -109,7 +109,7 @@
                 android:defaultValue="true"
                 android:persistent="false" />
 
-            <com.android.settings.slim.SystemSettingSwitchPreference
+            <com.android.settings.ose.SystemSettingSwitchPreference
                     android:key="proximity_on_wake"
                     android:title="@string/proximity_wake_title"
                     android:summary="@string/proximity_wake_summary"

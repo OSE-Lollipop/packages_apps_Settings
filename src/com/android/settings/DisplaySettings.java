@@ -56,7 +56,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.android.settings.slim.DisplayRotation;
+import com.android.settings.ose.DisplayRotation;
 
 import java.util.ArrayList;
 import java.util.List;

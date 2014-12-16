@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright (C) 2013 SlimRoms Project
+<!-- Copyright (C) 2013 OSE
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@
             android:title="@string/status_bar_style_title">
 
         <PreferenceScreen
-                android:fragment="com.android.settings.slim.StatusBarClockStyle"
+                android:fragment="com.android.settings.ose.StatusBarClockStyle"
                 android:key="clock_style_pref"
                 android:title="@string/status_bar_clock" />
 
@@ -40,7 +40,7 @@
             android:persistent="false"
             android:defaultValue="false" />
 
-    <com.android.settings.slim.SystemSettingSwitchPreference
+    <com.android.settings.ose.SystemSettingSwitchPreference
             android:key="double_tap_sleep_gesture"
             android:title="@string/double_tap_to_sleep_title"
             android:summary="@string/double_tap_to_sleep_summary"
