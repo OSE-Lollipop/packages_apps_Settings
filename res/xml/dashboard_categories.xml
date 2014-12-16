@@ -78,9 +78,9 @@
         <!-- Interface -->
         <dashboard-tile
                 android:id="@+id/interface_settings"
-                android:icon="@drawable/ic_settings_interface"
-                android:fragment="com.android.settings.ose.InterfaceSettings"
-                android:title="@string/interface_settings_title"
+                android:icon="@drawable/ic_settings_ose_extras"
+                android:fragment="com.android.settings.ose.OSESettings"
+                android:title="@string/ose_extras_settings_title"
                 />
 
     </dashboard-category>

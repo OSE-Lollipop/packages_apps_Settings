@@ -28,7 +28,14 @@
 
     <!-- OSE settings screens -->
     <string name="header_category_personalization">Personalization</string>
-    <string name="interface_settings_title">OSE Extras</string>
+    <string name="ose_extras_settings_title">OSE Extras</string>
+    <string name="ose_advanced_settings_title">Advanced</string>
+    <string name="ose_animations_settings_title">Animations</string>
+    <string name="ose_appearance_settings_title">Appearance</string>
+    <string name="ose_general_settings_title">General</string>
+    <string name="ose_notification_and_qsettings_title">Notifications and QuickSettings</string>
+    <string name="ose_status_bar_settings_title">Status Bar</string>
+
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
@@ -340,7 +347,6 @@
     <string name="notification_light_voicemail_title">Voicemail</string>
 
     <!-- Status bar -->
-    <string name="status_bar_title">Status bar</string>
     <string name="status_bar_style_title">Style</string>
     <string name="status_bar_options_title">Options</string>
 

@@ -30,14 +30,14 @@ import android.preference.SwitchPreference;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class InterfaceSettings extends SettingsPreferenceFragment implements
+public class AppearanceSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.ose_interface_settings);
+        addPreferencesFromResource(R.xml.ose_appearance_settings);
 
     }
 

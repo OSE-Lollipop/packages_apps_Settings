@@ -51,7 +51,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.status_bar_settings);
+        addPreferencesFromResource(R.xml.ose_status_bar_settings);
 
         PreferenceScreen prefSet = getPreferenceScreen();
 

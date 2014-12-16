@@ -38,7 +38,7 @@ import com.android.settings.R;
 
 import java.util.Locale;
 
-public class QsSettings extends SettingsPreferenceFragment
+public class NotificationAndQSettings extends SettingsPreferenceFragment
             implements OnPreferenceChangeListener  {
 
     public static final String TAG = "QsSettings";
@@ -55,7 +55,7 @@ public class QsSettings extends SettingsPreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Load the preferences from an XML resource
-        addPreferencesFromResource(R.xml.qs_settings);
+        addPreferencesFromResource(R.xml.notification_and_qsettings);
 
         PreferenceScreen prefs = getPreferenceScreen();
 
