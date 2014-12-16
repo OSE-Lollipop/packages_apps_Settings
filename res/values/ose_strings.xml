@@ -27,7 +27,7 @@
     <string name="reset_message">Reset all entries to default?</string>
 
     <!-- OSE settings screens -->
-    <string name="header_category_personalization">OSE Extras</string>
+    <string name="header_category_personalization">Personalization</string>
     <string name="interface_settings_title">OSE Extras</string>
 
     <!-- Color Picker -->
