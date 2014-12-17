@@ -46,6 +46,8 @@ public class AnimationsSettings extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.ose_animations_settings);
 
+        PreferenceScreen prefSet = getPreferenceScreen();
+
         mToastAnimation = (ListPreference) prefSet.findPreference(KEY_TOAST_ANIMATION);
         mToastAnimation.setSummary(mToastAnimation.getEntry());
         int CurrentToastAnimation = Settings.System.getInt(
@@ -62,9 +64,9 @@ public class AnimationsSettings extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         final String key = preference.getKey();
         if (KEY_TOAST_ANIMATION.equals(key)) {
-            int index = mToastAnimation.findIndexOfValue((String) objValue);
+            int index = mToastAnimation.findIndexOfValue((String) newValue);
             Settings.System.putString(getContentResolver(),
-                    Settings.System.TOAST_ANIMATION, (String) objValue);
+                    Settings.System.TOAST_ANIMATION, (String) newValue);
             mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
             Toast.makeText(getActivity(), "Toast animation test!!!",
                     Toast.LENGTH_SHORT).show();

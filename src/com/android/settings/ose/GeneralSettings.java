@@ -17,6 +17,7 @@
 package com.android.settings.ose;
 
 import android.app.ActivityManager;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -44,6 +45,8 @@ public class GeneralSettings extends SettingsPreferenceFragment implements
 
 
         addPreferencesFromResource(R.xml.ose_general_settings);
+
+        ContentResolver resolver = getActivity().getContentResolver();
 
          mDisableIM = (CheckBoxPreference) findPreference(DISABLE_IMMERSIVE_MESSAGE);
          mDisableIM.setChecked((Settings.System.getInt(resolver,
