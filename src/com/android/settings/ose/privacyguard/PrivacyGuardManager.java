@@ -30,7 +30,6 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.content.pm.Signature;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
@@ -277,30 +276,12 @@ public class PrivacyGuardManager extends Fragment
         List<PackageInfo> packages = mPm.getInstalledPackages(
             PackageManager.GET_PERMISSIONS | PackageManager.GET_SIGNATURES);
         boolean showSystemApps = shouldShowSystemApps();
-        boolean filterByPermission = shouldFilterByPermission();
-        boolean hasPrivacyGuardOps;
-        Signature platformCert;
-
-        try {
-            PackageInfo sysInfo = mPm.getPackageInfo("android", PackageManager.GET_SIGNATURES);
-            platformCert = sysInfo.signatures[0];
-        } catch (PackageManager.NameNotFoundException e) {
-            platformCert = null;
-        }
-
         for (PackageInfo info : packages) {
             final ApplicationInfo appInfo = info.applicationInfo;
             hasPrivacyGuardOps = mAppOps.getPrivacyGuardOpsForPackage(info.packageName).size() > 0;
 
             // hide apps without privacy guard permissions
             if (filterByPermission && !hasPrivacyGuardOps) {
-                continue;
-            }
-
-            // hide apps signed with the platform certificate to avoid the user
-            // shooting himself in the foot
-            if (platformCert != null && info.signatures != null
-                    && platformCert.equals(info.signatures[0])) {
                 continue;
             }
 
